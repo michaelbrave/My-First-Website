@@ -1,0 +1,237 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16pt;
+}
+
+h1{
+	font-size: 300%;
+
+}
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.master {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.master-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nav > li {
+  display: inline-block;
+}
+.nav > li + li {
+  margin-left: 20px;
+}
+.nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.nav > .active > a,
+.nav > .active > a:hover,
+.nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .brand {
+    float: left;
+  }
+  .nav {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+  }
+}
+
+/*for underlining links on hover */
+    .highlight::after{
+      content: '';
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: grey;
+      transition: width .3s;
+    }
+
+    a:hover{
+      color: grey!important;
+    }
+
+    .highlight:hover::after{
+      width: 100%;
+      transition: width .3s;
+    }
+
+/*
+ * Content
+ */
+
+.content {
+  padding: 0 20px;
+}
+
+.highlight, .highlight2{
+  color:#ffce22;
+  text-transform: capitalize;
+  text-shadow: .5px .5px rgba(178,142,12, 0.5);
+  display: inline-block;
+  text-decoration: none !important;
+}
+
+/*
+ * Footer
+ */
+
+.footer {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .master-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .footer,
+  .container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .footer,
+  .container {
+    width: 700px;
+  }
+}
+
+
+
+
+/*below this is animation stuff*/
+		.float {
+		  animation: float_5541 4s linear infinite;
+		  transform-origin: 50% 50%;
+		}
+		@keyframes float_5541 {
+		  0% { transform: translateY(0) }
+		  25% { transform: translateY(-6px) }
+		  50% { transform: translateY(0) }
+		  100% { transform: translateY(0) }
+		}
+
+		.mail{
+			-webkit-animation-delay: 1s;
+      -webkit-animation-duration: 2s;
+		}
+		.blog{
+			-webkit-animation-delay: 1.5s;
+      -webkit-animation-duration: 2s;
+		}
+		.twit{
+			-webkit-animation-delay: 2s;
+      -webkit-animation-duration: 2s;
+		}
+		.utube{
+			-webkit-animation-delay: 2.5s;
+      -webkit-animation-duration: 2s;
+		}
+		.git{
+			-webkit-animation-delay: 3s;
+      -webkit-animation-duration: 2s;
+		}
+		.behan{
+			-webkit-animation-delay: 3.5s;
+      -webkit-animation-duration: 2s;
+		}
+
+    /* Icon Fade color change */
+    .hvr-icon-fade {
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px transparent;
+    }
+    .hvr-icon-fade:before {
+
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-transition-duration: 1.5s;
+      transition-duration: 1.5s;
+      -webkit-transition-property: color;
+      transition-property: color;
+    }
+    .hvr-icon-fade:hover:before, .hvr-icon-fade:focus:before, .hvr-icon-fade:active:before {
+      color: #ffce22;
+    }
